@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head th:replace="/fragments/head :: head">
+ 	<link rel="stylesheet" href="../static/css/estilosrecetas.css">
+    <title>Tortilla de calabazin</title>
+</head>
+
+   <body style="font-family: Roboto, sans-serif;">
+      <nav th:replace="/fragments/navbar :: nav"></nav>
+    
+      <header style="display: flex; justify-content: center;">
+        <h1 class="lines-effect">TORTILLA DE CALABAZIN</h1>
+</header> <br><br>
+
+<div class="container-all">
+	<div style="display: flex; justify-content: center;">
+    	<img style="border-radius:30px" src="../img/tortillacalabazin.jpg" width="1024" height="682" alt="">
+	</div>
+    <div style="text-align: center;margin-top: 40px;">
+    <p>Esta tortilla de calabacín y cebolla es una receta muy fácil, riquísima y rápida de preparar.<br>
+            Además se puede tomar en caliente pero también en frío lo que permite prepararla para llevar por ejemplo de picnic o a la playa y también que sea perfecta para esos aperitivos fríos con la familia o los amigos o incluso en cualquier celebración informal.<br>
+            A nosotros nos gusta que el huevo quede perfectamente cuajado pero sin perder jugosidad, aunque también sabemos que hay a quien le gusta que el interior quede un poco líquido por lo que en la receta te doy las indicaciones para que la prepares a tu gusto tanto si te gusta de una forma como de otra.</p>
+
+       <br>
+       
+       
+
+
+            <div style="text-align: center;">
+    
+    <p><h4 style="color: #E99D2D ;">Ingredientes:</h4> <br>
+        5 huevos.<br>
+        1 cebolleta o cebolla.<br>
+        1 calabacín grande o 2 pequeños.<br>
+        Aceite de oliva y sal.
+    </p>
+    
+
+
+  <p> <h4 style="color:#E99D2D;">Elaboración:</h4><br>
+    Lava el calabacín y córtalo en rodajas finas, tal y como puedes ver en las fotografías.<br>
+Aunque puedes cocinarlo en sartén, a mi me gusta mucho más cómo queda en el microondas.<br>
+ Pon las rodajas de calabacín en un estuche o recipiente apto para cocinar en el microondas microondas tapado con papel film y cocínalo 8 minutos a máxima potencia (suelen ser 800W).<br>
+
+
+Mientras se cocina el calabacín pela la cebolla y córtala en trocitos.<br>
+ Yo prefiero no picarla mucho porque me gusta que se noten los trocitos de cebolla, también podrías cortarla en tiras.<br>
+
+En una sartén con un par de cucharadas de aceite y a fuego medio-bajo, echa la cebolla junto con un poco de sal y deja que se poche durante unos 10 minutos, hasta que empiece a dorarse.<br>
+ Personalmente me gusta que llegue poco dorada a la tortilla aunque esto ya va en gustos.<br>
+Cuando la cebolla ya esté prácticamente lista incorpora el calabacín que ya se habrá cocinado en el microondas (escúrrelo bien antes de añadirlo) y revuélvelo todo 2 minutos a fuego medio. Reserva.
+
+      
+
+ 
+
+
+    </p>
+            </div>
+          </div>
+    <!--      <div style="text-align: center;">
+            <div layout:fragment="content" class="container">
+              <div class="row">
+                <div class="col-12">
+               <h1>Agrega tu comentario</h1>	
+                <form action="#" th:action="@{/comentario/guardar}" th:object="${comentario}" method="POST">
+                  <input type="hidden" th:field="*{id}" class="form-control" >
+                  
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Titulo</label>
+                    <input type="text" th:field="*{titulo}" class="form-control" id="nombre">
+          
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Comentario</label>
+                    <input type="text" th:field="*{comentario}" class="form-control" id="exampleInputPassword1">
+                  </div>
+          
+                  <button type="submit" class="btn btn-success">Aceptar</button>
+                  <button type="button" class="btn btn-danger" a href="/">Cancelar</button>
+                 <a class="btn btn-danger" href="/comentario/principal">Volver</a>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>--> 
+</div>
+<div style="text-align: center;">
+  <h1 class="lines-effect">Comentarios sobre la receta</h1>
+</div>
+<div style="margin: 100px;">
+  <div class="col-12 mt-3">
+    <table class="table table-info">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Titulo</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Usuario</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="comentario : ${comentarios}" }>
+          <td><span th:text="${comentario.id}"> Title </span></td>
+          <td><span th:text="${comentario.titulo}"> Title </span></td>
+          <td><span th:text="${comentario.comentario}"> Title </span></td>
+          <td><span th:text="${comentario.usuario}"> Title </span></td>
+
+          <td>
+            <a class="btn btn btn-success btn-sm" th:href="@{'/comentario/editar/'+${comentario.id}}">Editar</a>
+            <a class="btn btn btn-danger btn-sm" th:href="@{'/comentario/eliminar/'+${comentario.id}}">Eliminar</a>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="botoninicio" style="display:flex; justify-content:center;">
+  <button type="button" style="text-align: center;" class="btn btn-outline-secondary"><a th:href="@{/receta}"
+							style="text-decoration: none;  color:#546932">Volver</a></button>
+  <button type="button" style="text-align: center;" class="btn btn-outline-secondary"><a th:href="@{/receta/recetasEdicion}"
+							style="text-decoration: none;  color:#546932">Editar</a></button>
+  <button type="button" style="text-align: center;" class="btn btn-outline-secondary"><a th:href="@{/receta/recetaEliminacion}"
+							style="text-decoration: none;  color:#546932">Eliminar</a></button>
+</div>
+
+    <footer th:replace="/fragments/footer :: footer"></footer>
+    
+</body>
+</html>

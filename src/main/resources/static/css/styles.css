@@ -1,0 +1,297 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Century Gothic', sans-serif;
+  }
+
+  .head{
+    display: flex;
+    align-items: center;
+	}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%;
+    font-family: sans-serif;
+}
+.imagenLogo{
+    border-radius: 100px;
+    cursor: pointer;
+}
+.nav_links{
+    list-style: none;
+    display: flex;
+    
+}
+.nav_links li{
+    display: inline-block;
+    padding: 0px 20px; 
+    
+}
+.nav_links li a{
+    transition: all 0.3s ease 0s;
+    color: #ffff;
+    text-decoration: none;
+    
+}
+.nav_links li a:hover{
+    color: #23d30c;
+}
+nav ul{
+    display: flex; 
+    align-items: center; 
+    font-family: 'Rubik', sans-serif;
+    margin-bottom: 0rem;
+}
+ul{
+    list-style-type: none;  
+}
+
+
+nav button{
+
+  padding: 9px 25px;
+  background-color: #000;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+
+main{
+  padding-top: 30px;
+}
+  .boton {
+    border: 1px solid #546932; /*anchura, estilo y color borde*/
+    padding: 5px 50px; /*espacio alrededor texto*/
+    color: #758d4f; /*color texto*/
+    text-decoration: none; /*decoración texto*/
+    border-radius: 10px; /*bordes redondos*/
+    font-style: italic; /* estilo de fuente*/
+    box-shadow: 0px 1px 2px grey;
+    background-color:#ffffff;
+  }
+
+  .boton:hover{
+    color: white;
+    background-color: #202918;
+  }
+
+  .header{ 
+     margin: 50px auto;
+     width: 80%;
+     height: 110px;
+     display: flex;
+     flex-wrap: nowrap;
+     justify-content: space-around;
+     align-items: center;
+  }
+  .botones-login{
+     display: flex;
+     flex-direction: column;
+  }
+  
+  .espacio{
+    margin: 5px;
+  }
+  .achicar{
+    height: 100%;
+  }
+
+  .contenedor {
+    width: 90%;
+    max-width: 120rem; /* = 1200px */
+    margin: 0 auto;
+  }
+
+  .contenedor-2 {
+    width: 90%;
+    max-width: 120rem; /* = 1200px */
+    margin: 0 auto;
+  }
+
+  .slide {
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #8ac07f;
+    border: 1px solid #546932;;
+    
+  }
+  
+  .foto {
+    border-radius: 20px;
+    width: 400px;
+    height: 600px;
+  }
+
+  .seccion {
+    margin-top: 2.1rem;
+    margin-bottom: 2.1rem;
+ }
+
+ .Texto1 {
+    position: absolute;
+    
+    bottom: 500px;
+    width: 280px;
+    left: 57px;
+ }
+
+ .Texto2 {
+    position: absolute;
+    
+    bottom: 500px;
+    left: 820px;
+    width: 280px;
+ }
+ .Texto3 {
+    position: absolute;
+    
+    bottom: 500px;
+    right: 50px;
+    width: 280px;
+ }
+
+ .contenido-1 {
+    display: flex;
+    margin: 50px;
+ }
+
+ .contenedor p{
+   font-size: 30px;
+   text-align: center;
+   color: #758d4f
+ }
+
+ .contenedor h3, h2{
+  margin-top: 50px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.contenedor h2 {
+  font-size: 50px;
+}
+
+.botones a{
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
+  margin: 10px;
+}
+.fotos {
+    width: 350px;
+    height: 350px;
+}
+
+#imagen-fondo{
+  background-image: url(/../img/output-onlinepngtools.png);
+  background-size: cover;
+  background-position: center center;
+  height: 50vh;
+  min-height:30rem;
+  margin-bottom: 20px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.texto-nutricionistas p {
+  padding: 90px 60px 60px 60px;
+  font-size: 50px;
+  font-style: italic;
+  position: relative;
+  color: #000;
+}
+
+#imagen-fondo .boton {
+  
+  border: 1px solid #546932; /*anchura, estilo y color borde*/
+  padding: 10px 100px; /*espacio alrededor texto*/
+  color: #758d4f; /*color texto*/
+  text-decoration: none; /*decoración texto*/
+  border-radius: 10px; /*bordes redondos*/
+  font-style: italic; /* estilo de fuente*/
+  box-shadow: 0px 1px 2px grey;
+  background-color:#ffffff;
+  font-size: 30px;
+}
+
+#imagen-fondo .boton:hover{
+  color: white;
+  background-color: #202918;
+}
+
+.fondo-datos{
+  background-image: url(img/plato-vegano-foto-freepik.jpeg);
+  background-size: cover;
+  background-position: center center;
+  font-size: 50px;
+}
+
+.fondo-datos p{ 
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.beneficios p{
+  font-size: 50px;
+  font-style: italic;
+  display:flex;
+  justify-content: center;
+  color:#546932;
+}
+
+.beneficios ul {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.benef-desc{
+  display:flex;
+  justify-content: center;
+}
+
+.container-1{
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+.container-1 input#nombre{
+  width: 300px;
+  height: 50px;
+  background: rgb(192, 192, 192);
+  border: none;
+  font-size: 10pt;
+  color: rgb(0, 0, 0);
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.container-1 input#nombre::-webkit-input-placeholder {
+   color: #65737e;
+}
+ 
+.container-1 input#nombre:-moz-placeholder { /* Firefox 18- */
+   color:  #65737e;  
+}
+ 
+.container-1 input#nombre::-moz-placeholder {  /* Firefox 19+ */
+   color:  #65737e;  
+}
+ 
+.container-1 input#nombre:-ms-input-placeholder {  
+   color:  #65737e;  
+}

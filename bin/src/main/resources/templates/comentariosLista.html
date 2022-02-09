@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vegapp</title>
+
+	<!--MAIN CSS-->
+	<link rel="stylesheet" href="../css/formrecetas.css">
+	
+
+	<!--BOOTSTRAP CSS-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+	<!--NAVBAR-->
+	<nav class="navbar navbar-light navbar-expand-md" style="height: 87px;">
+        <div class="container-fluid"><a class="navbar-brand text-center" href="#"><img
+                    class="img-fluid d-xl-flex justify-content-xl-end align-items-xl-start"
+                    src="../img/3fbc43ce-787a-47fb-adea-5853915a289f.jpg" width="74" height="81" id="img-logo"
+                    style="height: 68px;margin-left: 42px;"></a><button data-bs-toggle="collapse" class="navbar-toggler"
+                data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1"></div><button class="btn" id="sin-cuenta" type="button"
+                style="margin-right: 46px;width: 168.266px;">No tengo cuenta aún</button>
+        </div>
+    </nav>
+
+	<!--FORM-->
+	<div class="container">
+		<div class="row">
+			<div class="col-6">
+				<div id="texto-bienvenida">
+					<h1>¡Carga tu receta en
+						Vegapp!</h1>
+					<p> Podes realizar tu aporte a nuestra comunidad, <br> ingresando la receta que a vos te guste...
+						<br>
+					</p>
+				</div>
+				<img class="rounded mx-auto d-block" id="img-form" src=" ../img/logorecetaverdeform.svg" alt="">
+
+			</div>
+
+			<div class="col-6 mt-4">
+				<form id="form-registro" class="col-8">
+					<label for="nombre"></label>
+					<input required type="text" id="nombre" class="form-control" placeholder="Nombre de la receta" />
+
+					<label for="descripcion"></label>
+					<input required type="text" rows="10" cols="40" id="nombre" class="form-control"
+						placeholder="Descripción" />
+					<div>
+						<label>Ingresa una foto</label>
+						<br>
+						<input type="file" name="foto" id="" required>
+						<br>
+						<br>
+					</div>
+					<button type="button" class="btn btn-dark">Cargar</button>
+				</form>
+			</div>
+
+
+			<!--AGREGAR COMENTARIO-->
+
+			<div>
+				<a type="button" class="btn btn-warning" th:href="@{/comentario/guardar-comentario}">Agregar
+					Comentario<a />
+			</div>
+
+			<!--BUSCAR COMENTARIO-->
+			<div>
+				<form action="#" th:action="@{/comentario/buscar-coincidencia}" method="GET">
+					<input type="hidden" class="form-control">
+					<div class="mb-3">
+						<label for="exampleInputEmail1" class="form-label">Titulo del Comentario</label>
+						<input type="text" name="titulo" class="form-control" id="exampleInputEmail1"
+							placeholder="Buscar">
+					</div>
+					<button type="submit" class="btn btn-warning">Buscar</button>
+				</form>
+			</div>
+
+
+
+			<!--LISTA DE COMENTARIO-->
+			<div class="col-12 mt-3">
+				<table class="table table-info">
+					<thead>
+						<tr>
+							<th scope="col">Id</th>
+							<th scope="col">Titulo</th>
+							<th scope="col">Descripcion</th>
+							<th scope="col">Usuario</th>
+							<th scope="col">Acciones</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="comentario : ${comentarios}" }>
+							<td><span th:text="${comentario.id}"> Title </span></td>
+							<td><span th:text="${comentario.titulo}"> Title </span></td>
+							<td><span th:text="${comentario.comentario}"> Title </span></td>
+							<td><span th:text="${comentario.usuario}"> Title </span></td>
+
+							<td>
+								<a class="btn btn btn-success btn-sm"
+									th:href="@{'/comentario/editar/'+${comentario.id}}">Editar</a>
+								<a class="btn btn btn-danger btn-sm"
+									th:href="@{'/comentario/eliminar/'+${comentario.id}}">Eliminar</a>
+
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+			<!--MODAL-->
+			<div class="modal" tabindex="-1" role="dialog">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Vegapp</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<p>Gracias por cargar la receta</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary">Confirmar</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+
+
+
+
+
+		<!--FOOTER-->
+		<footer class="text-center footer-basic" id="footer"
+  			style="font-family: Roboto, sans-serif;margin-top: 75px;width: 100%;height: 228px;font-size: 6px;padding-top: 55px;">
+  				<div class="social" style="height: 51px;"><a href="#"><i class="icon ion-social-instagram"></i></a><a
+          href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i
+              class="icon ion-social-twitter"></i></a><a href="#" style="max-width: 100%;"><i
+              class="icon ion-social-facebook"></i></a></div>
+  			<ul class="list-inline" style="font-size: 15px;">
+      				<li class="list-inline-item"><a href="#">Home</a></li>
+      				<li class="list-inline-item"><a href="#">Services</a></li>
+      				<li class="list-inline-item"><a href="#">About</a></li>
+      				<li class="list-inline-item"><a href="#">Terms</a></li>
+      				<li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+  			</ul>
+  						<p class="text-body copyright">Vegapp © 2021</p>
+		</footer>
+</div>
+
+</body>
+
+
+
+<!--BOOTSTRAP JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
+
+<!--MAIN JS-->
+<script src="../js/login.js"></script>
+
+</html>

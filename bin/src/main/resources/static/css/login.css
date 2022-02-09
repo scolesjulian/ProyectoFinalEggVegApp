@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300;400;700&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+#boton-inicio {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px 0px;
+  border-radius: 24px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+#boton-inicio:hover {
+  background-color: #758e4f;
+  color: #000000;
+}
+
+#sin-cuenta {
+  padding: 9px 25px;
+  background-color: #000;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+#sin-cuenta a{
+	color: white;
+}
+#sin-cuenta:hover {
+  background-color: #758e4f;
+  color: #000000;
+}
+
+#footer {
+  background-color: #758e4f;
+  color: #000000;
+}
+
+.casilleros {
+  background-color: #c4c4c4;
+}
+
+nav {
+  background-color: #758e4f;
+}
+.nav_links{
+    list-style: none;
+    display: flex;
+    
+}
+.nav_links li{
+    display: inline-block;
+    padding: 0px 20px; 
+    
+}
+.nav_links li a{
+    transition: all 0.3s ease 0s;
+    color: #ffff;
+    text-decoration: none;
+    
+}
+.nav_links li a:hover{
+    color: #23d30c;
+}
+nav ul{
+    display: flex; 
+    align-items: center; 
+    font-family: 'Rubik', sans-serif;
+    margin-bottom: 0rem;
+}
+ul{
+    list-style-type: none;  
+}
+nav button{
+  padding: 9px 25px;
+  background-color: #000;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+#container-form {
+  margin-top: 35px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#bienvenida {
+  margin-bottom: 10px;
+}

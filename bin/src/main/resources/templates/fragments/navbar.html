@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light navbar-expand-md " style="height: 87px;">
+	<div class="container-fluid"><a class="navbar-brand text-center" href="/"><img
+				class="img-fluid d-xl-flex justify-content-xl-end align-items-xl-start" id="img-logo"
+				src="../img/3fbc43ce-787a-47fb-adea-5853915a289f.jpg" width="74" height="81"
+				style="height: 68px;margin-left: 42px;"></a><button data-bs-toggle="collapse" class="navbar-toggler"
+			data-bs-target="#navcol-1"><span class="visually-hidden">Toggle
+				navigation</span><span class="navbar-toggler-icon"></span></button>
+
+	</div>
+	<div class="collapse navbar-collapse" id="navcol-1">
+		<ul class="nav_links ml-auto">
+			<li class="nav-item">
+				<a sec:authorize="hasRole('ADMIN')" th:href="@{/admin/dashboard}">Dashboard</a>          
+		  	</li>
+			<li class="nav-item">
+				<a href="#">Artículos</a>
+			</li>
+			<li class="nav-item">
+				<a href="/receta">Recetas</a>
+			</li>
+			<li class="nav-item">
+				<a href="/tienda/tiendasMostrar">Tiendas</a>
+			</li>
+			<li class="nav-item">
+				<a href="/centroMedico/centrosMedicosMostrar">Centros Médicos</a>
+			</li>
+			<li class="nav-item"  th:if="${session.usuariosession == null}">
+				<a href="/usuario/registro">Registrarse</a>
+			</li>
+			<li class="nav-item"  th:if="${session.usuariosession == null}"><button>
+					<a href="/login" >Iniciar Sesión</a></button>
+			</li>
+			<li class="nav-item"th:if="${session.usuariosession != null}"><button>
+					<a th:href="@{/usuario/editar-perfil(id=__${session.usuariosession.id}__)}">Perfil</a></button>
+			</li>
+			<li class="nav-item" th:if="${session.usuariosession != null}">
+				<a href="/logout">Cerrar Sesión</a>
+			</li>
+		</ul>
+	</div>
+</nav>

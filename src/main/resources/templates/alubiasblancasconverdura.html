@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="/fragments/head :: head">
+ 	<link rel="stylesheet" href="../static/css/estilosrecetas.css">
+ 
+    <title>Alubias blancas con verdura</title>
+</head>
+<nav th:replace="/fragments/navbar :: nav"></nav>
+
+    <body style="font-family: Roboto, sans-serif;">
+      
+    
+      <header style="display: flex; justify-content: center;">
+        <h1 class="lines-effect">ALUBIAS BLANCAS CON VERDURA</h1>
+	</header> <br><br>
+
+<div class="container-all">
+	<div style="display: flex; justify-content: center;">
+    	<img style="border-radius:30px" src="../img/alubiasblancas.jpg" width="1024" height="682" alt="" class="image">
+	</div>
+   <div style="text-align: center;margin-top: 40px;">
+    <p>Las judias o alubias blancas con verduras es una de esas comidas saludables, ricas, fáciles y económicas de preparar.<br>
+         Tiene todas las proteínas de la legumbre y las vitaminas de la verdura.<br>
+          Si a todo ello le sumamos que no tiene nada de grasa y que están muy ricas, tenemos una de esas recetas «buenas, bonitas, baratas».<br>
+           Si eres vegetariano o vegano, este plato no puede faltar en tu recetario.<br>
+            Podemos prepararla en olla a presión con la cuál, en 20 minutos la tendremos hecha.<br>
+             O podemos hacerla de forma tradicional.<br>
+              Al «chup, chup» del fuego, en una cazuela. Tardarán un poco más. Alrededor de una hora pero ¡también estará mucho más rica!<br>
+               Pero bueno, entremos a los detalles de como preparar unas alubias con verduras caseras.<br>
+               Receta fácil y sana para cocinar unas alubias blancas con sofrito de verduras, un plato de legumbres tradicional rico en proteínas vegetales.
+
+    </p>
+    <br>
+    <br>
+
+       
+
+   
+    
+    <div style="text-align: center;">
+      <p><h4 style="color: #E99D2D ; text-align: center;">Ingredientes:</h4> <br>
+        400g de alubias blancas<br>
+        1 pimiento rojo<br>
+        1 pimiento verde<br>
+        2 dientes de ajo<br>
+        1/2 cebolla<br>
+        1/2 puerro<br>
+        sal y pimienta<br>
+        aceite de oliva<br>
+    </p>
+    
+
+
+  <p> <h4 style="color:#E99D2D;">Elaboración:</h4><br>
+    La noche anterior ponemos a remojo las alubias blancas. En un recipiente grande, las cubrimos bien con agua. Las alubias crecerán y absorberán parte del agua así que, es importante que estén muy bien cubiertas.<br>
+     Con estas cantidades, unos 2 o 3 litros de agua. Dejamos en remojo toda la noche.<br>
+
+     Comenzamos con la preparación de nuestras alubias blancas con verduras. A la mañana siguiente, las alubias estarán mucho más blandas.<br>
+       Las metemos en una cazuela y echamos el mismo agua donde estuvieron en remojo.<br>
+        La cantidad exacta variará según gustos. Así pues, si te gustan caldosas, que cubran dos o tres dedos por encima de las alubias.<br>
+         Si no, con un dedo por encima es suficiente.<br>
+
+         Añadimos aquí el resto de ingredientes. El pimiento rojo y el pimiento verde, los dientes de ajo pelados y enteros (puedes darles un golpe para que estén parcialmente machacados), la cebolla y el puerro y medio vaso de aceite de oliva. <br>
+         Finalmente echamos un buen pellizco de sal y un poco de pimienta molida.<br>
+
+        
+
+ 
+
+
+    </p>
+  </div>
+  </div>
+  <div style="text-align: center;">
+    <div layout:fragment="content" class="container">
+      <div class="row">
+        <div class="col-12">
+     <!--  <h1>Agrega tu comentario</h1>	
+        <form action="#" th:action="@{/comentario/guardar}" th:object="${comentario}" method="POST">
+          <input th:if="${comentario != null}" type="hidden" th:field="*{id}" class="form-control" >
+          
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Titulo</label>
+            <input type="text" th:field="*{titulo}" class="form-control" id="nombre">
+  
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Comentario</label>
+            <input type="text" th:field="*{comentario}" class="form-control" id="exampleInputPassword1">
+          </div>
+  
+          <button type="submit" class="btn btn-success">Aceptar</button>
+          <button type="button" class="btn btn-danger" a href="/">Cancelar</button>
+         <a class="btn btn-danger" href="/comentario/principal">Volver</a>-->
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center;">
+    <h1 class="lines-effect">Comentarios sobre la receta</h1>
+  </div>
+  <div style="margin: 100px;">
+    <div class="col-12 mt-3">
+      <table class="table table-info">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="comentario : ${comentarios}" }>
+            <td><span th:text="${comentario.id}"> </span></td>
+            <td><span th:text="${comentario.titulo}">  </span></td>
+            <td><span th:text="${comentario.comentario}"> </span></td>
+            <td><span th:text="${comentario.usuario}"></span></td>
+
+            <td>
+              <a class="btn btn btn-success btn-sm" th:href="@{'/comentario/editar/'+${comentario.id}}">Editar</a>
+              <a class="btn btn btn-danger btn-sm" th:href="@{'/comentario/eliminar/'+${comentario.id}}">Eliminar</a>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  
+
+
+<div class="botoninicio" style="display:flex; justify-content:center;">
+  <button type="button" style="text-align: center;" class="btn btn-outline-secondary"><a th:href="@{/receta}"
+							style="text-decoration: none;  color:#546932">Volver</a></button>
+  <button type="button" style="text-align: center;" class="btn btn-outline-secondary"><a th:href="@{/receta/recetasEdicion}"
+							style="text-decoration: none;  color:#546932">Editar</a></button>
+  <button type="button" style="text-align: center;" class="btn btn-outline-secondary"><a th:href="@{/receta/recetaEliminacion}"
+							style="text-decoration: none;  color:#546932">Eliminar</a></button>
+</div>
+</div>
+
+
+    <footer th:replace="/fragments/footer :: footer"></footer>
+    
+</body>
+</html>

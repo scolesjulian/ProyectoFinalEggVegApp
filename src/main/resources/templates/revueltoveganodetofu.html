@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head th:replace="/fragments/head :: head">
+ 	<link rel="stylesheet" href="../static/css/estilosrecetas.css">
+  <title>Revuelto vegano de tofu</title>
+</head>
+
+
+
+  <body style="font-family: Roboto, sans-serif;">
+    <nav th:replace="/fragments/navbar :: nav"></nav>
+
+    <header style="display: flex; justify-content: center;">
+    <div class="lines-effect">
+      <h1 >REVUELTO VEGANO DE TOFU</h1>
+    </div>
+    </header> <br><br>
+
+    <div class="container-all">
+    	<div style="display: flex; justify-content: center;">
+      		<img style="border-radius:30px" src="../img/revueltoveganotofu.jpg" width="1024" height="682" alt="">
+    	</div>
+	      <div style="text-align: center;margin-top: 40px;">
+	        <p>El revuelto vegano de tofu es una alternativa vegetal a los huevos revueltos. Es un plato muy sencillo, alto
+	          en proteína, que se prepara con tan sólo 4 ingredientes.<br>
+	          El tofu firme, el más común en nuestros supermercados, se puede cocinar de múltiples maneras para sumar
+	          proteínas vegetales a cualquier dieta.<br>
+	          Sin duda es una fuente proteíca ideal para veganos, pero no hay ningún motivo para que cualquier persona no
+	          disfrute de recetas tan sencillas y saludables como este revuelto con verduras.<br>
+	          Es además perfecto para táper o para aprovechar esas hortalizas que piden salida en la nevera.</p>
+	        <p>La idea de convertir el tofu en una versión vegana del revuelto de huevos es bien sencilla: solo hay que
+	          desmenuzarlo y saltearlo con los ingredientes que se quieran.<br>
+	          Un sofrito de verduras añade mucho sabor, especialmente si lo enriquecemos con especias, alguna salsa o un
+	          poco de caldo o nata vegetal.<br>
+	        </p>
+	
+	        <br>
+
+
+        <div style="text-align: center;">
+          <p>
+          <h4 style="color: #E99D2D ;">Ingredientes:</h4> <br>
+          225 g tofu firme (8 oz)<br>
+          1/4 cucharadita de sal, ver notas<br>
+          1/4 cucharadita de cúrcuma, ver notas<br>
+          1/8 cucharadita de pimienta negra molida<br>
+          </p>
+
+
+
+          <p>
+          <h4 style="color:#E99D2D;">Elaboración:</h4><br>
+          Trocea el tofu y desmigájalo con ayuda de un tenedor para que tenga una textura similar al huevo hecho en
+          revuelto.<br>
+          Echa un poco de agua o de aceite en una sartén y cuando esté caliente añade el tofu y el resto de
+          ingredientes. Remueve hasta que estén bien integrados y cocina a fuego medio-alto durante unos 5-10 minutos o
+          hasta que el tofu esté a tu gusto. Remueve de vez en cuando.<br>
+          Sirve inmediatamente. Nosotros lo presentamos en tostadas con un poco de perejil picado por encima y un poco
+          más de pimienta.<br>
+          Puedes guardar el revuelto en la nevera en un recipiente hermético durante unos 3 ó 4 días.<br>
+
+
+
+
+
+
+          </p>
+        </div>
+      </div>
+  <!--     <div style="text-align: center;">
+        <div layout:fragment="content" class="container">
+          <div class="row">
+            <div class="col-12">
+              <h1>Agrega tu comentario</h1>
+              <form action="#" th:action="@{/comentario/guardar}" th:object="${comentario}" method="POST">
+                <input type="hidden" th:field="*{id}" class="form-control">
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Titulo</label>
+                  <input type="text" th:field="*{titulo}" class="form-control" id="nombre">
+
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Comentario</label>
+                  <input type="text" th:field="*{comentario}" class="form-control" id="exampleInputPassword1">
+                </div>
+
+                <button type="submit" class="btn btn-success">Aceptar</button>
+                       <button type="button" class="btn btn-danger" a href="/">Cancelar</button>
+   <a class="btn btn-danger" href="/comentario/principal">Volver</a> -->
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center;">
+      <h1 class="lines-effect">Comentarios sobre la receta</h1>
+    </div>
+    <div style="margin: 100px;">
+      <div class="col-12 mt-3">
+        <table class="table table-info">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Titulo</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="comentario : ${comentarios}" }>
+              <td><span th:text="${comentario.id}"> Title </span></td>
+              <td><span th:text="${comentario.titulo}"> Title </span></td>
+              <td><span th:text="${comentario.comentario}"> Title </span></td>
+              <td><span th:text="${comentario.usuario}"> Title </span></td>
+  
+              <td>
+                <a class="btn btn btn-success btn-sm" th:href="@{'/comentario/editar/'+${comentario.id}}">Editar</a>
+                <a class="btn btn btn-danger btn-sm" th:href="@{'/comentario/eliminar/'+${comentario.id}}">Eliminar</a>
+  
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+   <div class="botoninicio" style="display:flex; justify-content:center;">
+  <button type="button" style="text-align: center;" class="btn btn-outline-secondary"><a th:href="@{/receta}"
+							style="text-decoration: none;  color:#546932">Volver</a></button>
+  <button type="button" style="text-align: center;" class="btn btn-outline-secondary"><a th:href="@{/receta/recetasEdicion}"
+							style="text-decoration: none;  color:#546932">Editar</a></button>
+  <button type="button" style="text-align: center;" class="btn btn-outline-secondary"><a th:href="@{/receta/recetaEliminacion}"
+							style="text-decoration: none;  color:#546932">Eliminar</a></button>
+</div>
+
+    <footer th:replace="/fragments/footer :: footer"></footer>
+
+  </body>
+
+</html>

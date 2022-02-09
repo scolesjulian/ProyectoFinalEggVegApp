@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="/fragments/head :: head">
+ 	<link rel="stylesheet" href="../static/css/estilosrecetas.css">>
+    <title>Ensalada de quinoa</title>
+</head>
+
+    <body style="font-family: Roboto, sans-serif;">
+      <nav th:replace="/fragments/navbar :: nav"></nav>
+    
+      <header style="display: flex; justify-content: center;">
+        <h1 class="lines-effect">ENSALADA DE QUINOA</h1>
+</header> <br><br>
+
+<div class="container-all">
+	<div style="display: flex; justify-content: center;">
+    	<img style="border-radius:30px" src="../img/ensaladadequinoa.jpg" width="1024" height="682" alt="">
+	</div>
+    <div style="text-align: center;margin-top: 40px;">
+    <p>La quinua o quinoa (Chenopodium quinoa) es un pseudocereal de origen andino. Se cultiva en los Andes
+        bolivianos, peruanos, ecuatorianos, chilenos y colombianos desde hace unos 5.000 años formando parte de la
+        alimentación diaria de los Incas. Crece a altitudes desde los cero hasta los 4.000 metros de altura.</p>
+
+       <p> Es baja en grasa y aporta carbohidratos, omega 3, alto contenido de fibra, vitaminas E, B y folatos y
+        minerales como fósforo, magnesio, manganeso, hierro y sílice. Los vegetarianos la utilizan como fuente de
+        proteína vegetal. Destaca su alto contenido en fósforo lo que nos ayuda a nuestra recuperación muscular
+        después del ejercicio.
+
+        No contiene gluten, por lo que es apta para personas celiaquías.
+
+        La quinoa tiene propiedades tonificantes, es un alimento antiinflamatorio, antioxidante, cicatrizante,
+        previene y mejora las infecciones urinarias y ayuda a depurar el hígado. Los últimos estudios han encontrado
+        que es rica en fitoestrógenos que pueden ayudar al llegar a la menopausia y prevenir el cáncer de mama y
+        osteoporosis en mujeres.</p>
+        <br>
+    
+
+   
+    <div style="text-align: center;">
+    <p><h4 style="color: #E99D2D ;">Ingredientes:</h4> <br>
+        – 250 gr de quinoa
+
+        – 2 tomates
+
+        – 2 tallos de apio
+
+        – Queso feta
+
+        – 1 zanahoria grande
+
+        – Aceitunas
+
+        – 1 pepino mediano<br>
+
+        – Aceite y Sal
+    </p>
+    
+
+
+  <p> <h4 style="color:#E99D2D;">Elaboración:</h4><br>
+        1)Hervimos la quinoa según las indicaciones del distribuidor, la escurrimos y la dejamos enfríar<br>
+
+        2)Mientras lavamos el apio y los tomates, pelamos la zanahoria y el pepino<br>
+
+        3)Troceamos todas las verduras<br>
+
+        4)Mezclamos las verduras y la quinoa<br>
+
+        5)Emplatamos adornando con queso feta y aceitunas<br>
+
+        6)Aliñamos según el gusto de cada uno<br>
+  </p>
+      </div>
+    </div>
+ <!-- <div style="text-align: center;">
+    <div layout:fragment="content" class="container">
+      <div class="row">
+        <div class="col-12">
+       <h1>Agrega tu comentario</h1>	
+        <form action="#" th:action="@{/comentario/guardar}" th:object="${comentario}" method="POST">
+          <input type="hidden" th:field="*{id}" class="form-control" >
+          
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Titulo</label>
+            <input type="text" th:field="*{titulo}" class="form-control" id="nombre">
+  
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Comentario</label>
+            <input type="text" th:field="*{comentario}" class="form-control" id="exampleInputPassword1">
+          </div>
+  
+          <button type="submit" class="btn btn-success">Aceptar</button>
+          <button type="button" class="btn btn-danger" a href="/">Cancelar</button>
+         <a class="btn btn-danger" href="/comentario/principal">Volver</a> -->  
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="text-align: center;">
+  <h1 class="lines-effect">Comentarios sobre la receta</h1>
+</div>
+<div style="margin: 100px;">
+  <div class="col-12 mt-3">
+    <table class="table table-info">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Titulo</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Usuario</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+    <!--  <tbody>
+        <tr th:each="comentario : ${comentarios}" }>
+          <td><span th:text="${comentario.id}"> Title </span></td>
+          <td><span th:text="${comentario.titulo}"> Title </span></td>
+          <td><span th:text="${comentario.comentario}"> Title </span></td>
+          <td><span th:text="${comentario.usuario}"> Title </span></td>
+
+          <td>
+            <a class="btn btn btn-success btn-sm" th:href="@{'/comentario/editar/'+${comentario.id}}">Editar</a>
+            <a class="btn btn btn-danger btn-sm" th:href="@{'/comentario/eliminar/'+${comentario.id}}">Eliminar</a>
+
+          </td>
+        </tr>
+      </tbody>-->
+    </table>
+  </div>
+</div>
+<div class="botoninicio" style="display:flex; justify-content:center;">
+  <button type="button" style="text-align: center;" class="btn btn-outline-secondary"><a th:href="@{/receta}"
+							style="text-decoration: none;  color:#546932">Volver</a></button>
+  <button type="button" style="text-align: center;" class="btn btn-outline-secondary"><a th:href="@{/receta/recetasEdicion}"
+							style="text-decoration: none;  color:#546932">Editar</a></button>
+  <button type="button" style="text-align: center;" class="btn btn-outline-secondary"><a th:href="@{/receta/recetaEliminacion}"
+							style="text-decoration: none;  color:#546932">Eliminar</a></button>
+</div>
+
+<!--<div id="publicar">
+    <button type="button" class="btn btn-outline-secondary">Editar</button>
+  </div>
+  <div id="publicar">
+    <button type="button" class="btn btn-outline-secondary">Eliminar</button>
+  </div>
+  <div id="publicar">
+    <button type="button" class="btn btn-outline-secondary">Inicio</button>
+  </div>-->
+
+    <footer th:replace="/fragments/footer :: footer"></footer>
+    
+</body>
+</html>

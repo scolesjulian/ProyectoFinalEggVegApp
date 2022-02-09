@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="/fragments/head :: head">
+</head>
+
+<body>
+	<nav th:replace="/fragments/navbar :: nav"></nav>
+	<div style="display:flex; justify-content:center; height: 130px;padding-top: 25px;">
+		<header>
+			<h1 class="lines-effect">TIENDAS</h1>
+		</header>
+	</div>
+
+	<form action="/tienda/tiendaMostrar" method="POST" enctype="multipart/form-data">
+		<p th:if="${error != null}" th:text="${error}" style="color: red;"></p>
+		<div class="box" style="margin-left: 690px;">
+			<div class="container-1">
+				<span class="icon"><i class="fa fa-search"></i></span>
+				<input type="text" id="nombre" placeholder="Busqueda por nombre" name="nombre" th:value="${nombre}"
+					required>
+			</div>
+		</div>
+	</form>
+	<br>
+	<br>
+
+	<div class="container" style="text-align: center">
+		<div class="row">
+			<div class="col-md-4" th:each="tiendas:${tiendas}" style="text-align: center">
+
+				<div class="col-md-12">
+					<img class="item-img" th:src="${'/foto/tienda/'+ tiendas.id}"
+						style="justify-content: center;width: 400px;">
+
+					<h3 th:text="${tiendas.nombre}"></h3>
+					<br>
+					<h5 class="item-text" th:text="${tiendas.descripcion}"></h5>
+
+					<br><br>
+					<!--<form action="/centroMedico/centroMedicoMostrarPorId" th:object="${centroMedico}" method="POST" enctype="multipart/form-data">
+						<input th:if="${centroMedico!=null}" type="button" name="id" th:field="*{id}" th:value="${centroMedico.id}"/>
+						<div class="botoninicio">
+							<button  type="submit" class="btn btn-outline-secondary">
+							Ver mas</button>
+						</div>
+					</form>-->
+				</div>
+				<div class="conteiner" style="text-align: center; display: flex; justify-content: center; ">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="botoninicio">
+								<button class="btn btn-outline-secondary" sec:authorize="hasRole('ADMIN')">
+									<a style="text-decoration: none; color:rgb(0, 0, 0);"
+										th:href="@{'/tienda/edicion/'+${tiendas.id}}">Editar</a>
+								</button>
+							</div>
+						</div>
+						<div class="col-md-4" style="text-align: center; display: flex; justify-content: center;">
+
+							<div class="botoninicio">
+								<a style="width: 100px;" class="btn btn-outline-secondary" type="button"
+									th:href="@{'/tienda/mostrar/'+${tiendas.id}}">Ver mas</a>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="botoninicio">
+								<button class="btn btn-outline-secondary" sec:authorize="hasRole('ADMIN')">
+									<a style="text-decoration: none; color:rgb(0, 0, 0);"
+										th:href="@{'/tienda/eliminar/'+${tiendas.id}}">Eliminar</a>
+								</button>
+							</div>
+						</div>
+						<br>
+						<br>
+						<hr size=5 align="center" noshade="noshade">
+						<br>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="../js/signin.js"></script>
+
+</body>
+<footer th:replace="/fragments/footer :: footer"></footer>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head th:replace="/fragments/head :: head">
+ 	<link rel="stylesheet" href="../static/css/estilosrecetas.css">
+    <title>Garbanzos con espinaca</title>
+</head>
+
+    <body style="font-family: Roboto, sans-serif;">
+      <nav th:replace="/fragments/navbar :: nav"></nav>
+    
+      <header style="display: flex; justify-content: center;">
+        <h1 class="lines-effect">GARBANZOS CON ESPINACA</h1>
+</header> <br><br>
+
+<div class="container-all">
+	<div style="display: flex; justify-content: center;">
+   		<img style="border-radius:30px" src="../img/garbanzosconespinaca.jpg" width="1024" height="682" alt="">
+	</div>
+    <div style="text-align: center;margin-top: 40px;">
+    <p>Garbanzos con espinacas es una de esas recetas completísimas.<br>
+       Especialmente en los días de otoño e invierno, aunque se puede comer durante todo el año. <br>
+        Un plato caliente, nutritivo, lleno de las proteínas de los garbanzos, que pueden alcanzar los 20g por cada 100g de esta legumbre y de la vitamina C y el calcio de las espinacas.<br>
+         Además, también tendrá otros nutrientes, entre ellos, las infinitas propiedades del ajo. Un plato completo donde los haya, sin apenas grasa.<br>
+          Tan solo, el aceite de oliva que añadamos pero, todos conocemos también las propiedades beneficiosas de este ingrediente.<br>
+           Así que sin más dilación, veamos cómo hacer estos garbanzos con espinacas que además, se prepara de forma muy fácil.<br>
+           En la receta original veréis cómo incorporan muchas más espinacas, aunque esto es a vuestra elección:<br>
+            podéis incorporar más espinacas o más garbanzos, a gusto.<br>
+            Es una receta poco laboriosa y muy rica, volvamos a los platos tradicionales, al cuchareo, no hay mejor comida.<br>
+
+            
+
+    </p>
+
+       
+
+   
+    <div style="text-align: center;">
+    <p><h4 style="color: #E99D2D ;">Ingredientes:</h4> <br>
+        400g de garbanzos<br>
+        500g de espinacas<br>
+        1/2 cebolla<br>
+        2 dientes de ajo<br>
+        1 cucharadita de pimentón dulce<br>
+        1 pizca de comino<br>
+        sal y pimienta<br>
+        Aceite de oliva<br>
+    </p>
+    
+
+    <div style="text-align: center;">
+  <p> <h4 style="color:#E99D2D;">Elaboración:</h4><br>
+    La noche anterior, ponemos los garbanzos en remojo. Y lo hacemos con abundante agua, que los cubra más que de sobra. <br>
+    Al menos con dos dedos por encima ya que los garbanzos crecerán y absorberán bastante agua.<br>
+     Añadimos una cucharadita de bicarbonato o un puñadito de sal y lo dejamos toda la noche.<br>
+
+    Al día siguiente, los escurrimos del agua y los introducimos en una olla.<br>
+     Los cubrimos nuevamente con más agua fresca.<br>
+     Lo tampamos y dejamos cocinar alrededor de 2 o 3 horas dependiendo el tipo de garbanzo, hasta que estén blandos. <br>
+     Si utilizas una olla express, su tiempo se reduce, en 30 minutos, más o menos estarán listos.
+    
+     Mientras se cocinan, preparamos el sofrito que va a acompañar a nuestros garbanzos con espinacas.<br>
+      En una cazuela ponemos un chorrito de aceite y lo vamos a calentar a fuego muy suave.<br>
+       Cuando esté caliente, añadimos los dientes de ajo bien picados. Dejamos que se cocinen aquí arededor de unos 2 minutos.<br>
+       Los garbanzos con espinacas es una receta que tarda un poco en hacerse, si no los haces en olla a presión pero, son muy fáciles de hacer.<br>
+        Es más, puedes estar a otras cosas mientras se cocinan. Por otra parte, también puedes dejarlos hechos con varios días de antelación.<br>
+         En la nevera, aguantan fácilmente 4 o 5 días. Además ¡de un día para otro están más ricos!<br>
+         
+
+      
+
+ 
+
+
+    </p>
+  </div>
+</div>
+<!-- 
+<div style="text-align: center;">
+  <div layout:fragment="content" class="container">
+    <div class="row">
+      <div class="col-12">
+     <h1>Agrega tu comentario</h1>	
+      <form action="#" th:action="@{/comentario/guardar}" th:object="${comentario}" method="POST">
+        <input type="hidden" th:field="*{id}" class="form-control" >
+        
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Titulo</label>
+          <input type="text" th:field="*{titulo}" class="form-control" id="nombre">
+
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Comentario</label>
+          <input type="text" th:field="*{comentario}" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        <button type="submit" class="btn btn-success">Aceptar</button>
+       <button type="button" class="btn btn-danger" a href="/">Cancelar</button>
+        <a class="btn btn-danger" href="/comentario/principal">Volver</a>-->
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div style="text-align: center;">
+  <h1 class="lines-effect">Comentarios sobre la receta</h1>
+</div>
+<div style="margin: 100px;">
+  <div class="col-12 mt-3">
+    <table class="table table-info">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Titulo</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Usuario</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+      <!--  <tr th:each="comentario : ${comentarios}" }>
+          <td><span th:text="${comentario.id}"> Title </span></td>
+          <td><span th:text="${comentario.titulo}"> Title </span></td>
+          <td><span th:text="${comentario.comentario}"> Title </span></td>
+          <td><span th:text="${comentario.usuario}"> Title </span></td>
+
+          <td>
+            <a class="btn btn btn-success btn-sm" th:href="@{'/comentario/editar/'+${comentario.id}}">Editar</a>
+            <a class="btn btn btn-danger btn-sm" th:href="@{'/comentario/eliminar/'+${comentario.id}}">Eliminar</a>
+
+          </td>
+        </tr>-->
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="botoninicio" style="display:flex; justify-content:center;">
+  <button type="button" style="text-align: center;" class="btn btn-outline-secondary"><a th:href="@{/receta}"
+							style="text-decoration: none;  color:#546932">Volver</a></button>
+  <button type="button" style="text-align: center;" class="btn btn-outline-secondary"><a th:href="@{/receta/recetasEdicion}"
+							style="text-decoration: none;  color:#546932">Editar</a></button>
+  <button type="button" style="text-align: center;" class="btn btn-outline-secondary"><a th:href="@{/receta/recetaEliminacion}"
+							style="text-decoration: none;  color:#546932">Eliminar</a></button>
+</div>
+
+<footer th:replace="/fragments/footer :: footer"></footer>
+    
+</body>
+</html>

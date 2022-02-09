@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Vegapp-sofi/src/main/resources/templates/recetasEdicion&apos; to &apos;recetasEdicion.html&apos;" description="Rename resource &apos;recetasEdicion&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/templates/recetasEdicion" name="recetasEdicion.html" stamp="1639708773312" updateReferences="true"/>
+</session>

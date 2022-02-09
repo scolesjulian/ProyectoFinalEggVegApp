@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="/fragments/head :: head">
+ 	<link rel="stylesheet" href="../static/css/estilosrecetas.css">
+ 	<link rel="stylesheet" href="../static/css/recetas.css">
+    <title>Falafel ligero</title>
+</head>
+
+    <body style="font-family: Roboto, sans-serif;">
+      <nav th:replace="/fragments/navbar :: nav"></nav>
+    
+      <header style="display: flex; justify-content: center;">
+        <h1 class="lines-effect">FALAFEL LIGERO</h1>
+</header> <br><br>
+
+<div class="container-all">
+	<div style="display: flex; justify-content: center;">
+  	  <img style="border-radius:30px" src="../img/falafelligero.jpg" width="1024" height="682" alt="">
+	</div>
+    <div style="text-align: center;margin-top: 40px;">
+    <p>Puede ser un genial aperitivo pero también una estupenda cena si lo sirves como hemos hecho nosotros con  pan pita, lechuga y la salsa de yogur.<br>
+         Sin duda es una forma diferente y muy sabrosa de comer legumbres y lo mejor de todo es que en casa nos gusta prepararlos al horno para que sean más ligeros pero más abajo en la sección de variaciones encontrarás las indicaciones para freírlos.<br>
+         Tengo entendido que muchas veces se le echa harina o pan rallado a los falafels y a mi el gluten no me sienta del todo bien, a excepción de la avena, de hecho en algunos países se considera que la es un cereal seguro para aquellas personas que deben evitar el gluten (aunque si tienes un problema de salud te recomiendo que hagas caso a tu médico).<br>
+          Si no puedes tomar avena, no te preocupes, puedes usar cualquier harina sin gluten o probar nuestra primera receta de falafel porque está libre de gluten.<br>
+           Una alternativa muy saludable y rica al tradicional pan de pita son las hojas verdes, en las fotos podéis ver col rizada, pero a veces también uso lechuga.</p>
+           <br>
+
+       
+
+   
+         <div style="text-align: center;">
+    <p><h4 style="color: #E99D2D ;">Ingredientes:</h4> <br>
+        240 g. de garbanzos cocidos y escurridos<br>
+
+        2 rebanadas de pan de molde<br>
+        
+        50 g. de cebolla<br>
+        
+         2 dientes de ajo pelados<br>
+        
+        1 cucharadita de comino molido<br>
+        
+        1/2 cucharadita de pimentón<br>
+        
+        1 manojo de culantro fresco<br>
+        
+        1 manojo de perejil fresco<br>
+        
+         30 ml de aceite de oliva extra virgen<br>
+        
+        1 cucharadita de levadura química, agua (opcional).<br>
+    </p>
+    
+
+
+  <p> <h4 style="color:#E99D2D;">Elaboración:</h4><br>
+    Lavar los garbanzos escurridos y triturar todos los ingredientes, ajustando la textura con agua si fuera necesario.<br>
+
+Tomamos pequeñas porciones de la masa y formamos bolitas de igual tamaño.<br>
+ Conviene humedecerse las manos para que la masa no se nos pegue.<br>
+  Las colocamos sobre una bandeja de horno cubierta con papel sulfurizado y aplastamos ligeramente con las manos.<br>
+   Dejamos reposar una hora en la refrigeradora o en una zona fría de la cocina. <br>
+
+
+Cocemos en horno pre calentado a 180ºC, arriba y abajo con calor tradicional, durante unos 20 minutos o hasta que estén dorados.<br>
+
+ Volteamos cada uno a media cocción, es decir, después de los primeros 10 minutos. <br>
+
+Retiramos del horno y servimos inmediatamente.
+
+      
+
+ 
+
+
+    </p>
+  </div>
+</div>
+<!--<div style="text-align: center;">
+  <div layout:fragment="content" class="container">
+    <div class="row">
+      <div class="col-12">
+     <h1>Agrega tu comentario</h1>	
+      <form action="#" th:action="@{/comentario/guardar}" th:object="${comentario}" method="POST">
+        <input type="hidden" th:field="*{id}" class="form-control" >
+        
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Titulo</label>
+          <input type="text" th:field="*{titulo}" class="form-control" id="nombre">
+
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Comentario</label>
+          <input type="text" th:field="*{comentario}" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        <button type="submit" class="btn btn-success">Aceptar</button>
+        <button type="button" class="btn btn-danger" a href="/">Cancelar</button>
+       <a class="btn btn-danger" href="/comentario/principal">Volver</a>--> 
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div style="text-align: center;">
+  <h1 class="lines-effect">Comentarios sobre la receta</h1>
+</div>
+<div style="margin: 100px;">
+  <div class="col-12 mt-3">
+    <table class="table table-info">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Titulo</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Usuario</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="comentario : ${comentarios}" }>
+          <td><span th:text="${comentario.id}"> Title </span></td>
+          <td><span th:text="${comentario.titulo}"> Title </span></td>
+          <td><span th:text="${comentario.comentario}"> Title </span></td>
+          <td><span th:text="${comentario.usuario}"> Title </span></td>
+
+          <td>
+            <a class="btn btn btn-success btn-sm" th:href="@{'/comentario/editar/'+${comentario.id}}">Editar</a>
+            <a class="btn btn btn-danger btn-sm" th:href="@{'/comentario/eliminar/'+${comentario.id}}">Eliminar</a>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="botoninicio" style="display:flex; justify-content:center;">
+  <button type="button" style="text-align: center;" class="btn btn-outline-secondary"><a th:href="@{/receta}"
+							style="text-decoration: none;  color:#546932">Volver</a></button>
+  <button type="button" style="text-align: center;" class="btn btn-outline-secondary"><a th:href="@{/receta/recetasEdicion}"
+							style="text-decoration: none;  color:#546932">Editar</a></button>
+  <button type="button" style="text-align: center;" class="btn btn-outline-secondary"><a th:href="@{/receta/recetaEliminacion}"
+							style="text-decoration: none;  color:#546932">Eliminar</a></button>
+</div>
+ 
+ <footer th:replace="/fragments/footer :: footer"></footer>
+    
+</body>
+</html>

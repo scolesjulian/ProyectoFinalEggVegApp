@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace= "/fragments/head :: head">
+    
+	<nav th:replace= "/fragments/navbar :: nav"></nav>
+
+<body>
+  
+    
+    <div class="container" id="container-form" style="max-width: 850px;">
+        <div class="row">
+            <div class="col-md-12 mb-3" id="bienvenida" style="height: 115px;">
+            <br>
+                <h1 class="text-center" style="height: 30px;font-family: Roboto, sans-serif;font-weight: bold;" th:text="${receta.nombre}">
+                    </h1><br>
+                <p class="text-center" style="font-family: Roboto, sans-serif;padding: 0px;text-align: center;" th:text="${receta.descripcion}">
+                
+                </p>
+            </div>
+        </div>
+        
+        
+        <div class="row" id="form-sigin" style="height: 455px;margin-top: 8px;">
+           
+           
+			            <div class="col-md-6" id="form-2" style="margin-top: 55px;">
+                <div id="image-form" style="margin-left: 50px;width: 224px;"><img
+                        th:src="${'/foto/receta/'+ receta.id}"
+                        style="text-align: right;width: 300px;height: 234.422px;" alt=""></div>
+            
+             <form action="/receta/buscarReceta" method="GET">         
+                <button class="btn btn-lg text-center" id="boton-registro" type="submit"
+                    style="margin-top: 29px;font-family: Roboto, sans-serif;font-weight: bold;text-align: center;width: 182.328px;margin-left: 116px;">
+                    Ir a busqueda
+                    
+               	</button>                            
+			<form> 
+
+           
+
+              
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="text-center footer-basic" id="footer"
+        style="font-family: Roboto, sans-serif;margin-top: 75px;width: 100%;height: 202px;font-size: 6px;">
+        <div class="social" style="height: 51px;"><a href="#"><i class="icon ion-social-instagram"></i></a><a
+                href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i
+                    class="icon ion-social-twitter"></i></a><a href="#" style="max-width: 100%;"><i
+                    class="icon ion-social-facebook"></i></a></div>
+        <ul class="list-inline" style="font-size: 15px;">
+            <li class="list-inline-item"><a href="#">Home</a></li>
+            <li class="list-inline-item"><a href="#">Services</a></li>
+            <li class="list-inline-item"><a href="#">About</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+        </ul>
+        <p class="text-body copyright">Vegapp © 2021</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/signin.js"></script>
+    
+</body>
+
+</html>
